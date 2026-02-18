@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/*
+ * SOLARIS Design System
+ * Custom properties and utility classes for the solar system explorer
+ */
+
+/* ============================================================
+   CSS Custom Properties — SOLARIS Color System
+   ============================================================ */
+:root {
+  /* Backgrounds */
+  --bg-space: #030014;
+  --surface: rgba(255, 255, 255, 0.05);
+
+  /* Accents */
+  --accent-primary: #7c3aed;
+  --accent-warm: #f59e0b;
+  --accent-cool: #06b6d4;
+
+  /* Text */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+
+  /* Fonts */
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+/* ============================================================
+   Base Styles
+   ============================================================ */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-space);
+  color: var(--text-primary);
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Ensure full viewport coverage */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   Glassmorphism Utility Classes
+   ============================================================ */
+
+/* Primary glass panel — for info cards, modals, sidebars */
+@utility glass-panel {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+}
+
+/* Navigation glass bar — for bottom nav, top bars */
+@utility glass-nav {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================
+   Font Utility Classes
+   ============================================================ */
+@utility font-display {
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+@utility font-body {
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+@utility font-mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+/* ============================================================
+   Scrollbar Styling (for panels that need scroll)
+   ============================================================ */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ============================================================
+   Selection Colors
+   ============================================================ */
+::selection {
+  background: rgba(124, 58, 237, 0.4);
+  color: var(--text-primary);
+}
